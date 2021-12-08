@@ -27,7 +27,7 @@ public class csvReader {
 				currentFile =parentDir+"Period "+row[2]+" - "+row[0]+"-"+row[1]+".csv";	 
 				
 				//Display current message on the display box
-			    GUI.message.setText(currentFile);
+			    GUI.updateMessage();
 
 				appendToFile(parentDir,currentFile, row);				
 			}

@@ -11,7 +11,7 @@ import java.io.File;
 
 
 
-class GUI extends Frame implements ActionListener
+public class GUI extends Frame implements ActionListener
 {
 TextField text1,text2,text3;
 Button button_BrowseFile, button_BrowseDir,button_GenerateFiles;
@@ -59,7 +59,7 @@ public GUI()
 }
 
 
-void updateGUI()
+public void updateGUI()
 {
 	add(message);
 	setSize(200,251);
@@ -115,6 +115,11 @@ void browseDir()
     
 
 
+}
+public static void updateMessage()
+{
+	GUI n=new GUI();
+	n.updateGUI();
 }
 public void actionPerformed(ActionEvent action) 
 {
