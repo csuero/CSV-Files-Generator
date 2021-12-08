@@ -1,26 +1,22 @@
 package csvGenerator;
 import java.awt.*;
-import java.awt.event.WindowEvent; 
 
 import java.awt.event.*;
-
-
-
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.JLabel;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.JFileChooser;
 
-import java.io.File;    
+import java.io.File;
+
+
 
 class GUI extends Frame implements ActionListener
 {
 TextField text1,text2,text3;
 Button button_BrowseFile, button_BrowseDir,button_GenerateFiles;
 TextField prefix;
-JLabel label;
+static JLabel label, message;
 
 
 final JFileChooser fc = new JFileChooser();
@@ -40,15 +36,16 @@ public GUI()
     label.setFont(new Font("Verdana", Font.PLAIN, 15));
 	add(label);
 	
-	
+    message = new JLabel("s",JLabel.CENTER);
 
-    button_BrowseFile =new Button("1. Browse Class List CSV File");
+
+    button_BrowseFile =new Button("1. Browse CSV File");
 	add(button_BrowseFile);
 	
 	button_BrowseDir = new Button("2. Open Files Directory");
 	button_GenerateFiles = new Button("3. Generate Files And Directories");
 	
-	setSize(300,250);
+	setSize(200,250);
 	
 	setTitle("CSV Files and Directories");
 	setLayout(new FlowLayout());
@@ -56,14 +53,19 @@ public GUI()
 	button_BrowseFile.addActionListener(this);
 	button_BrowseDir.addActionListener(this);
 	button_GenerateFiles.addActionListener(this);
+	
+	
+	
 }
 
 
 void updateGUI()
 {
-	setSize(300,251);
-	setSize(200,250);
+	add(message);
+	setSize(200,251);
+	setSize(250,250);
 }
+
 
 
 public void browseFile()
@@ -74,15 +76,18 @@ public void browseFile()
     fc.setDialogTitle("Choose a .csv file");
     fc.setAcceptAllFileFilterUsed(false);
     
-    
     if(fc.showOpenDialog(this)==JFileChooser.APPROVE_OPTION)
     {    
     	
         File f=fc.getSelectedFile();
+        
+        //Get file name and display it on the message box
         csvReader.FILE=f.getPath();
+        message.setText("File: "+f.getName());
         System.out.print(csvReader.FILE);
         add(button_BrowseDir);
         updateGUI();
+
     }
 	
 
@@ -99,8 +104,11 @@ void browseDir()
     if (dc.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) 
     {
     	csvReader.DIR=dc.getSelectedFile().getPath();
+    	
+    	//get directory name and display one the message box. 
+    	message.setText("Dir: "+ dc.getSelectedFile().getName());
     	add(button_GenerateFiles);
-        updateGUI();
+    	updateGUI();
 
     	
      }
@@ -122,7 +130,8 @@ public void actionPerformed(ActionEvent action)
 	
 	if(action.getSource()==button_GenerateFiles)
 	{
-		csvReader.generateFiles();	    
+		csvReader.generateFiles();
+		message.setText("Generating!");
 	}
 }
 	

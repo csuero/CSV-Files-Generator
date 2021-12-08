@@ -4,8 +4,6 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Arrays;
-
 import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
 import com.opencsv.exceptions.CsvValidationException;
@@ -27,9 +25,18 @@ public class csvReader {
 				
 				parentDir =DIR+"/"+row[3]+"/";
 				currentFile =parentDir+"Period "+row[2]+" - "+row[0]+"-"+row[1]+".csv";	 
+				
+				//Display current message on the display box
+			    GUI.message.setText(currentFile);
+
 				appendToFile(parentDir,currentFile, row);				
 			}
+			
+		    GUI.message.setText("Done generating files!");
+
 		} catch (CsvValidationException | IOException e) {
+		    GUI.message.setText("Done generating files with errors: "+ e.getMessage());
+
 			e.printStackTrace();
 		}
 	}
