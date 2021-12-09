@@ -1,0 +1,3 @@
+"CourseCode","SectionId","PeriodId || '/'","TeacherName","StudentID","StudentName","OfficialClass","Email"
+"MAT101","2","2","Newton","1","Stu1","101","Stu1@email.com"
+"MAT101","2","2","Newton","2","Stu2","101","Stu2@email.com"

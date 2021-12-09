@@ -1,0 +1,3 @@
+"CourseCode","SectionId","PeriodId || '/'","TeacherName","StudentID","StudentName","OfficialClass","Email"
+"SCI01","5","5","Einstein","1","Stu1","101","Stu1@email.com"
+"SCI01","5","5","Einstein","2","Stu2","101","Stu2@email.com"

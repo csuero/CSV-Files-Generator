@@ -1,0 +1,10 @@
+CourseCode,SectionId,PeriodId || '/',TeacherName,StudentID,StudentName,OfficialClass,Email
+BIO101,9,9,Darwin,1,Stu1,101,Stu1@email.com
+MAT101,2,2,Newton,1,Stu1,101,Stu1@email.com
+MAT101,2,2,Newton,2,Stu2,101,Stu2@email.com
+SCI01,5,5,Einstein,1,Stu1,101,Stu1@email.com
+SCI01,5,5,Einstein,2,Stu2,101,Stu2@email.com
+BIO101,9,9,Darwin,3,Stu3,101,Stu3@email.com
+BIO101,9,9,Darwin,4,Stu4,101,Stu4@email.com
+BIO101,9,9,Darwin,6,Stu6,101,Stu6@email.com
+SCI01,8,8,Einstein,10,Stu10,102,Stu10@email.com

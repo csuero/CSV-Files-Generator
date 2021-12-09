@@ -1,0 +1,5 @@
+"CourseCode","SectionId","PeriodId || '/'","TeacherName","StudentID","StudentName","OfficialClass","Email"
+"BIO101","9","9","Darwin","1","Stu1","101","Stu1@email.com"
+"BIO101","9","9","Darwin","3","Stu3","101","Stu3@email.com"
+"BIO101","9","9","Darwin","4","Stu4","101","Stu4@email.com"
+"BIO101","9","9","Darwin","6","Stu6","101","Stu6@email.com"
